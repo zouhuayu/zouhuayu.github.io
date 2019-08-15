@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="zouhuayu, Java, 后端开发，校招面试">
+  <meta name="keywords" content="Java面试的故事,Typora,">
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="zouzou的个人博客网站">
-<meta property="og:url" content="https://zouhuayu.github.io/index.html">
+<meta name="description" content="Java面试需要准备的东西很多，包括但不限于Java关键字、常用API类、面向对象思想、经典jdk源码分析，集合类、并发与多线程、IO/NIO/AIO、反射与代理、JVM、TCP/IP、数据库、redis、数据结构与算法、设计模式、Git、Maven、分布式/微服务/云服务、前后端分离、vue全家桶、spring全家桶等等。要想每一个知识点都掌握显然难度不小，但在平常学习过程中对一些面试经常会遇到">
+<meta name="keywords" content="Java面试的故事,Typora">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java面试准备之面向对象">
+<meta property="og:url" content="https://zouhuayu.github.io/2019/08/15/JavaInterview/index.html">
 <meta property="og:site_name" content="zouzou的个人博客网站">
+<meta property="og:description" content="Java面试需要准备的东西很多，包括但不限于Java关键字、常用API类、面向对象思想、经典jdk源码分析，集合类、并发与多线程、IO/NIO/AIO、反射与代理、JVM、TCP/IP、数据库、redis、数据结构与算法、设计模式、Git、Maven、分布式/微服务/云服务、前后端分离、vue全家桶、spring全家桶等等。要想每一个知识点都掌握显然难度不小，但在平常学习过程中对一些面试经常会遇到">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-08-15T09:29:51.818Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zouzou的个人博客网站">
+<meta name="twitter:title" content="Java面试准备之面向对象">
+<meta name="twitter:description" content="Java面试需要准备的东西很多，包括但不限于Java关键字、常用API类、面向对象思想、经典jdk源码分析，集合类、并发与多线程、IO/NIO/AIO、反射与代理、JVM、TCP/IP、数据库、redis、数据结构与算法、设计模式、Git、Maven、分布式/微服务/云服务、前后端分离、vue全家桶、spring全家桶等等。要想每一个知识点都掌握显然难度不小，但在平常学习过程中对一些面试经常会遇到">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://zouhuayu.github.io/">
+  <link rel="canonical" href="https://zouhuayu.github.io/2019/08/15/JavaInterview/">
 
 
 
 
 
-  <title>zouzou的个人博客网站</title>
+  <title>Java面试准备之面向对象 | zouzou的个人博客网站</title>
   
 
 
@@ -140,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -234,9 +238,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -266,9 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/15/JavaInterview/" itemprop="url">Java面试准备之面向对象</a></h1>
+          <h1 class="post-title" itemprop="name headline">Java面试准备之面向对象</h1>
         
 
         <div class="post-meta">
@@ -340,311 +342,122 @@
       
 
       
+        <p>Java面试需要准备的东西很多，包括但不限于Java关键字、常用API类、面向对象思想、经典jdk源码分析，集合类、并发与多线程、IO/NIO/AIO、反射与代理、JVM、TCP/IP、数据库、redis、数据结构与算法、设计模式、Git、Maven、分布式/微服务/云服务、前后端分离、vue全家桶、spring全家桶等等。要想每一个知识点都掌握显然难度不小，但在平常学习过程中对一些面试经常会遇到的问题做点总结，深扒一下底层原理，就可以在面试中脱颖而出。本篇内容主要是和面向对象有关的知识点，相关问题在实际面试中出现的频率非常高，值得记录下来跟道友一起分享。</p>
+<a id="more"></a>
+
+<p>[TOC]</p>
+<h1 id="Java面试准备之面向对象"><a href="#Java面试准备之面向对象" class="headerlink" title="Java面试准备之面向对象"></a>Java面试准备之面向对象</h1><h2 id="1-面向对象的优点？如何理解面向对象"><a href="#1-面向对象的优点？如何理解面向对象" class="headerlink" title="1.面向对象的优点？如何理解面向对象"></a>1.面向对象的优点？如何理解面向对象</h2><p>世间万物皆对象，对象有具体的的实例化,任何方法或者属性都要写在对象(类)里面。易扩展、易维护、面向对象三大特征(封装,继承,多态)。封装是把过程和数据包围起来，对数据的访问只能通过已定义的权限访问控制符规定的范围。继承是一种联结类的层次模型，并且允许和鼓励类的重用，它提供了一种明确表述共性的方法。对象的一个新类可以从现有的类中派生，这个过程称为类继承。多态性是指允许不同类的对象对同一消息作出响应。可以把不同的子类对象都当作父类来看，可以屏蔽不同子类对象之间的差异，写出通用的代码，做出通用的编程，以适应需求的不断变化。</p>
+<h2 id="2-接口与抽象类的区别"><a href="#2-接口与抽象类的区别" class="headerlink" title="2.接口与抽象类的区别"></a>2.接口与抽象类的区别</h2><p>类是单继承的，但是可以实现多个接口，抽象类里的方法可以有实例方法也可以有抽象方法，接口里面只能有抽象方法(在jdk8里面接口也可以有实现方法）。</p>
+<h2 id="3-类的组成和执行顺序"><a href="#3-类的组成和执行顺序" class="headerlink" title="3.类的组成和执行顺序"></a>3.类的组成和执行顺序</h2><p>组成:属性、方法、静态块、非静态块。</p>
+<p>执行顺序： 先父类,后子类,静态块 静态字段 非静态块 非静态字段 构造器 方法。</p>
+<h2 id="4-String与StringBuffer、StringBuilder的区别？"><a href="#4-String与StringBuffer、StringBuilder的区别？" class="headerlink" title="4.String与StringBuffer、StringBuilder的区别？"></a>4.String与StringBuffer、StringBuilder的区别？</h2><p>String 是不可变的，可以直接使用它的方法 用来创建字符串，而 StringBuffer、StringBuilder无论怎么修改都是一个对象，如果在字符串改变或者迭代改变的情况下Stringbuffer比String运行快，StringBuilder比StringBuffer更加快捷,但是StringBuilder线程不安全</p>
+<h2 id="5-重载和重写的区别？"><a href="#5-重载和重写的区别？" class="headerlink" title="5.重载和重写的区别？"></a>5.重载和重写的区别？</h2><p>重载发生在同一个类,不同的方法里面。 重写发生在父子类中，参数完全相同的方法里面。重载参数不同，而重写参数相同且返回类型相同。方法名相同,重写override是父类与子类之间多态性的一种表现，重载是一个类中多态性的一种表现。</p>
+
+      
+    </div>
+    
+    
+    
+<div>
+      
         
-          <p>Java面试需要准备的东西很多，包括但不限于Java关键字、常用API类、面向对象思想、经典jdk源码分析，集合类、并发与多线程、IO/NIO/AIO、反射与代理、JVM、TCP/IP、数据库、redis、数据结构与算法、设计模式、Git、Maven、分布式/微服务/云服务、前后端分离、vue全家桶、spring全家桶等等。要想每一个知识点都掌握显然难度不小，但在平常学习过程中对一些面试经常会遇到的问题做点总结，深扒一下底层原理，就可以在面试中脱颖而出。本篇内容主要是和面向对象有关的知识点，相关问题在实际面试中出现的频率非常高，值得记录下来跟道友一起分享。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/15/JavaInterview/#more" rel="contents">
-              Read more &raquo;
-            </a>
+      
+</div>
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/wechat.png" alt="zouzou wechat" style="width: 200px; max-width: 100%;">
+    <div>欢迎您扫一扫上面的微信号，添加我的私人微信！</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="zouzou WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="zouzou Alipay">
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    zouzou
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="https://zouhuayu.github.io/2019/08/15/JavaInterview/" title="Java面试准备之面向对象">https://zouhuayu.github.io/2019/08/15/JavaInterview/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java面试的故事/" rel="tag"># Java面试的故事</a>
+          
+            <a href="/tags/Typora/" rel="tag"># Typora</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/15/leetcode-twosum/" rel="next" title="两数之和 Leetcode-twosum">
+                <i class="fa fa-chevron-left"></i> 两数之和 Leetcode-twosum
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-<div>
-      
-</div>
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zouhuayu.github.io/2019/08/15/leetcode-twosum/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zouzou">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zouzou的个人博客网站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/15/leetcode-twosum/" itemprop="url">两数之和 Leetcode-twosum</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-15T00:00:00+08:00">
-                2019-08-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/那些年和LeetCode的故事/" itemprop="url" rel="index">
-                    <span itemprop="name">那些年和LeetCode的故事</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="两数之和"><a href="#两数之和" class="headerlink" title="两数之和"></a>两数之和</h1><h2 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h2><p>​    <em>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。</em></p>
-<h2 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h2><p>​    给定 nums = [2, 7, 11, 15], target = 9。因为 nums[0] + nums[1] = 2 + 7 = 9，所以返回 [0, 1]。</p>
-<p><img src="https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1892477896.jpg" alt="img"></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/15/leetcode-twosum/#more" rel="contents">
-              Read more &raquo;
-            </a>
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-<div>
-      
-</div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zouhuayu.github.io/2019/08/14/test/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zouzou">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zouzou的个人博客网站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/14/test/" itemprop="url">test</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-14T23:24:49+08:00">
-                2019-08-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-<div>
-      
-</div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -654,144 +467,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zouhuayu.github.io/2019/08/14/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zouzou">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="zouzou的个人博客网站">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/14/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-14T22:37:59+08:00">
-                2019-08-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-<div>
-      
-</div>
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -799,6 +479,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -819,8 +503,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -954,6 +647,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java面试准备之面向对象"><span class="nav-number">1.</span> <span class="nav-text">Java面试准备之面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-面向对象的优点？如何理解面向对象"><span class="nav-number">1.1.</span> <span class="nav-text">1.面向对象的优点？如何理解面向对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-接口与抽象类的区别"><span class="nav-number">1.2.</span> <span class="nav-text">2.接口与抽象类的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-类的组成和执行顺序"><span class="nav-number">1.3.</span> <span class="nav-text">3.类的组成和执行顺序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-String与StringBuffer、StringBuilder的区别？"><span class="nav-number">1.4.</span> <span class="nav-text">4.String与StringBuffer、StringBuilder的区别？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-重载和重写的区别？"><span class="nav-number">1.5.</span> <span class="nav-text">5.重载和重写的区别？</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1132,6 +841,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
