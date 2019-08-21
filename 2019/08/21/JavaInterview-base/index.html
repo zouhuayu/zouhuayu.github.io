@@ -89,14 +89,14 @@
 <meta name="description" content="Java面试需要准备的东西很多，包括但不限于Java基础、常用API类、面向对象思想、经典jdk源码分析，集合类、并发与多线程、IO/NIO/AIO、反射与代理、JVM、TCP/IP、数据库、redis、数据结构与算法、设计模式、Git、Maven、分布式/微服务/云服务、前后端分离、vue全家桶、spring全家桶等等。要想每一个知识点都掌握显然难度不小，但在平常学习过程中对一些面试经常会遇到的">
 <meta name="keywords" content="Java面试的故事,Typora">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java面试准备之面向对象">
-<meta property="og:url" content="https://zouhuayu.github.io/2019/08/15/JavaInterview-oo/index.html">
+<meta property="og:title" content="Java面试准备之Java基础">
+<meta property="og:url" content="https://zouhuayu.github.io/2019/08/21/JavaInterview-base/index.html">
 <meta property="og:site_name" content="zouzou&#39;s Blog">
 <meta property="og:description" content="Java面试需要准备的东西很多，包括但不限于Java基础、常用API类、面向对象思想、经典jdk源码分析，集合类、并发与多线程、IO/NIO/AIO、反射与代理、JVM、TCP/IP、数据库、redis、数据结构与算法、设计模式、Git、Maven、分布式/微服务/云服务、前后端分离、vue全家桶、spring全家桶等等。要想每一个知识点都掌握显然难度不小，但在平常学习过程中对一些面试经常会遇到的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-21T11:51:35.119Z">
+<meta property="og:updated_time" content="2019-08-21T12:55:05.275Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java面试准备之面向对象">
+<meta name="twitter:title" content="Java面试准备之Java基础">
 <meta name="twitter:description" content="Java面试需要准备的东西很多，包括但不限于Java基础、常用API类、面向对象思想、经典jdk源码分析，集合类、并发与多线程、IO/NIO/AIO、反射与代理、JVM、TCP/IP、数据库、redis、数据结构与算法、设计模式、Git、Maven、分布式/微服务/云服务、前后端分离、vue全家桶、spring全家桶等等。要想每一个知识点都掌握显然难度不小，但在平常学习过程中对一些面试经常会遇到的">
 
 
@@ -127,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://zouhuayu.github.io/2019/08/15/JavaInterview-oo/">
+  <link rel="canonical" href="https://zouhuayu.github.io/2019/08/21/JavaInterview-base/">
 
 
 
 
 
-  <title>Java面试准备之面向对象 | zouzou's Blog</title>
+  <title>Java面试准备之Java基础 | zouzou's Blog</title>
   
 
 
@@ -261,7 +261,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zouhuayu.github.io/2019/08/15/JavaInterview-oo/">
+    <link itemprop="mainEntityOfPage" href="https://zouhuayu.github.io/2019/08/21/JavaInterview-base/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zouzou">
@@ -278,7 +278,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java面试准备之面向对象</h1>
+          <h1 class="post-title" itemprop="name headline">Java面试准备之Java基础</h1>
         
 
         <div class="post-meta">
@@ -290,8 +290,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-15T00:00:00+08:00">
-                2019-08-15
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-21T00:00:00+08:00">
+                2019-08-21
               </time>
             
 
@@ -349,37 +349,74 @@
       
 
       
-        <p>Java面试需要准备的东西很多，包括但不限于Java基础、常用API类、<strong>面向对象思想</strong>、经典jdk源码分析，集合类、并发与多线程、IO/NIO/AIO、反射与代理、JVM、TCP/IP、数据库、redis、数据结构与算法、设计模式、Git、Maven、分布式/微服务/云服务、前后端分离、vue全家桶、spring全家桶等等。要想每一个知识点都掌握显然难度不小，但在平常学习过程中对一些面试经常会遇到的问题做点总结，深扒一下底层原理，就可以在面试中脱颖而出。本篇内容主要是和面向对象有关的知识点，相关问题在实际面试中出现的频率非常高，值得记录下来跟道友一起分享。</p>
+        <p>Java面试需要准备的东西很多，包括但不限于<strong>Java基础</strong>、常用API类、面向对象思想、经典jdk源码分析，集合类、并发与多线程、IO/NIO/AIO、反射与代理、JVM、TCP/IP、数据库、redis、数据结构与算法、设计模式、Git、Maven、分布式/微服务/云服务、前后端分离、vue全家桶、spring全家桶等等。要想每一个知识点都掌握显然难度不小，但在平常学习过程中对一些面试经常会遇到的问题做点总结，深扒一下底层原理，就可以在面试中脱颖而出。本篇内容主要是和面向对象有关的知识点，相关问题在实际面试中出现的频率非常高，值得记录下来跟道友一起分享。</p>
 <a id="more"></a>
 
-<h2 id="1-面向对象的优点？如何理解面向对象"><a href="#1-面向对象的优点？如何理解面向对象" class="headerlink" title="1 面向对象的优点？如何理解面向对象"></a>1 面向对象的优点？如何理解面向对象</h2><p>世间万物皆对象，对象有具体的的实例化,任何方法或者属性都要写在对象(类)里面。易扩展、易维护、面向对象三大特征(封装,继承,多态)。</p>
-<p>封装是把过程和数据包围起来，对数据的访问只能通过已定义的权限访问控制符规定的范围。</p>
-<p>继承是一种联结类的层次模型，并且允许和鼓励类的重用，它提供了一种明确表述共性的方法。对象的一个新类可以从现有的类中派生，这个过程称为类继承。</p>
-<p>多态性是指允许不同类的对象对同一消息作出响应。可以把不同的子类对象都当作父类来看，可以屏蔽不同子类对象之间的差异，写出通用的代码，做出通用的编程，以适应需求的不断变化。</p>
-<h2 id="2-接口与抽象类的区别"><a href="#2-接口与抽象类的区别" class="headerlink" title="2 接口与抽象类的区别"></a>2 接口与抽象类的区别</h2><h3 id="2-1-什么是抽象类？"><a href="#2-1-什么是抽象类？" class="headerlink" title="2.1 什么是抽象类？"></a>2.1 什么是抽象类？</h3><p>含有abstract修饰符的class即为抽象类，abstract类不能创建实例对象。含有abstract方法的类必须定义为abstract class, abstract class类中的方法不必是抽象的。abstract class类中定义抽象方法必须在具体子类中实现，因此不能定义抽象构造方法或抽象静态方法（自己和子类都无法使用，编译出错）。如果子类没有实现抽象父类中的所有抽象方法，那么子类也必须定义为abstract类型。</p>
-<h3 id="2-2-什么是接口？"><a href="#2-2-什么是接口？" class="headerlink" title="2.2 什么是接口？"></a>2.2 什么是接口？</h3><p>接口(interface)可以看成是抽象类的一种特例，接口的所有方法都必须是抽象的。接口中的方法定义默认为public abstract类型，接口中的成员变量类型默认为public static final</p>
-<h3 id="2-3-接口与抽象类的语法区别"><a href="#2-3-接口与抽象类的语法区别" class="headerlink" title="2.3 接口与抽象类的语法区别"></a>2.3 接口与抽象类的语法区别</h3><p>从构造方法、静态方法、非抽象方法、抽象方法、普通成员变量、静态成员变量以及继承几个方面讨论两者的区别。</p>
-<p>抽象类可以有<strong><em>构造方法</em></strong>，接口中不能有构造方法。抽象类中的构造方法是为了初始化，而不是实例化。</p>
-<p>抽象类中可以包含<strong><em>静态方法</em></strong>， jdk1.8前接口中不能包含静态方法，1.8后接口可以直接定义静态方法体，用接口名调用。</p>
-<p>抽象类中可以包含<strong><em>非抽象的普通方法</em></strong>，接口中的所有方法必须是抽象的，不能有非抽象的普通方法。</p>
-<p>抽象类和接口的<strong><em>抽象方法访问权限</em></strong>，jdk1.8以前，抽象类的方法默认访问权限为protected，jdk 1.8时，抽象类的方法默认访问权限变为default ；jdk 1.8以前，接口中的方法必须是public的 ，jdk1.8时，接口中的方法可以是public的，也可以是default的 ，jdk 1.9时，接口中的方法可以是private的。</p>
-<p>抽象类中可以有<strong><em>普通成员变量</em></strong>，接口中没有普通成员变量（成员变量类型默认为public static final）。</p>
-<p>抽象类和接口中都可以包含<strong><em>静态成员变量</em></strong>，但是抽象类中的静态成员变量的访问类型可以是任意的，但接口中定义的变量只能是public static final 类型，并且默认即为public static final类型。</p>
-<p>一个类可以只能<strong><em>继承</em></strong>一个抽象类，但是确能同时继承多个接口。</p>
-<h3 id="2-4-应用区别"><a href="#2-4-应用区别" class="headerlink" title="2.4 应用区别"></a>2.4 应用区别</h3><p>接口的应用往往是在系统架构设计方法发挥作用，主要用于定义模块之间的通信契约，定义一组规范。而抽象类在代码实现方面发挥作用，可以实现代码的重用。例如模板方法设计模式，假设某个项目的所有Servlet类都要用相同的方式进行权限判断、记录访问日志和处理异常，那么就可以定义一个抽象的基类，让所有的Servlet都继承这个抽象基类，在抽象基类的service方法中完成权限判断、记录日志访问日志和处理异常的代码，在各个子类中只用写完成各自的业务逻辑代码。</p>
-<h2 id="3-类的组成和执行顺序"><a href="#3-类的组成和执行顺序" class="headerlink" title="3 类的组成和执行顺序"></a>3 类的组成和执行顺序</h2><p>组成:属性、方法、静态块、非静态块。</p>
-<p>执行顺序： 先父类,后子类,静态块 静态字段 非静态块 非静态字段 构造器 方法。</p>
-<h2 id="4-String与StringBuffer、StringBuilder的区别？"><a href="#4-String与StringBuffer、StringBuilder的区别？" class="headerlink" title="4 String与StringBuffer、StringBuilder的区别？"></a>4 String与StringBuffer、StringBuilder的区别？</h2><h3 id="4-1-三者的语法区别"><a href="#4-1-三者的语法区别" class="headerlink" title="4.1 三者的语法区别"></a>4.1 三者的语法区别</h3><p>String 是字符串常量，而StringBuffer和StringBuilder是字符串变量。由String创建的字符串内容是不可变的，而由StringBuffer和StringBuilder创建的字符内容是可以改变的。StirngBuffer是线程安全的，而StringBuilder是非线程安全的。StringBuilder支持StringBuffer的所有操作，因为他不执行同步，不会有线程安全带来额外的系统消耗，所以速度更快。</p>
-<h3 id="4-2-关于String的不可变"><a href="#4-2-关于String的不可变" class="headerlink" title="4.2 关于String的不可变"></a>4.2 关于String的不可变</h3><h4 id="4-2-1底层源码设计"><a href="#4-2-1底层源码设计" class="headerlink" title="4.2.1底层源码设计"></a>4.2.1底层源码设计</h4><p>虽然String、StringBuffer和StringBuilder都是final类，生成的对象都是不可变，并且内部也都是靠char数组实现的，但是不同之处在于String类中的char数组是final的,而StringBuffer和StringBuilder都是继承AbstractStringBuilder类，它们的内部实现都是靠这个父类完成的，而这个父类中定义的char数组只是一个普通私有变量，可以用append追加。</p>
-<h4 id="4-2-1为什么奖String设计成不可变"><a href="#4-2-1为什么奖String设计成不可变" class="headerlink" title="4.2.1为什么奖String设计成不可变"></a>4.2.1为什么奖String设计成不可变</h4><p>首先是字符串常量池的需要，当创建一个String对象时，假如此字符串值已经存在于常量池中，则不会创建一个新的对象，而是引用已经存在的对象。</p>
-<p>其次，在Java中String对象的哈希码被频繁地使用，比如在hashmap等容器中，字符串不变性保证了hash码的唯一性，因此可以放心地进行缓存，这也是一种性能优化手段，意味着不必每次都去计算新的哈希码。</p>
-<p>最后，从安全性反面考虑，String被许多的Java类库用来当作参数，例如网络连接地址，文件路径，还有反射机制需要的String参数，假若Stirng不是固定不变的，将会引起各种安全隐患。String类的不变性使得同一个字符串可以安全的被多个线程共享。</p>
-<h2 id="5-重载和重写的区别？"><a href="#5-重载和重写的区别？" class="headerlink" title="5 重载和重写的区别？"></a>5 重载和重写的区别？</h2><h3 id="5-1-什么是重载？"><a href="#5-1-什么是重载？" class="headerlink" title="5.1 什么是重载？"></a>5.1 什么是重载？</h3><p> 重载（Overload）是指在一个类中，同名的方法如果有不同的参数列表（参数类型不同、参数个数不同甚至是参数顺序不同）则视为重载。同时，重载对返回类型没有要求，可以相同也可以不同，不能通过返回类型是否相同来判断。</p>
-<h3 id="5-2-什么是重写？"><a href="#5-2-什么是重写？" class="headerlink" title="5.2 什么是重写？"></a>5.2 什么是重写？</h3><p>重写是指在子类中把父类本身有的方法重新写一遍。子类继承了父类原有的方法，但有时子类并不想原封不动的继承父类中的某个方法，所以在方法名，参数列表，返回类型都相同的情况下，对方法体进行修改和重写，这就是重写。有一种情况下，子类中方法的返回值是父类中方法返回值的子类时可以说返回类型不同。另外在子类中重写的方法的访问权限不能少于父类中被重写的方法</p>
-<h3 id="5-3-重载和重写的区别"><a href="#5-3-重载和重写的区别" class="headerlink" title="5.3 重载和重写的区别"></a>5.3 重载和重写的区别</h3><p> 方法的重载和重写都是实现多态的方式，区别在于前者实现的是编译时的多态性，而后者实现的是运行时的多态性。</p>
-<p> 重载发生在一个类中，同名的方法如果有不同的参数列表（参数类型不同、参数个数不同或者二者都不同）则视为重载；</p>
-<p> 重写发生在子类与父类之间，重写要求子类被重写方法与父类被重写方法有相同的参数列表，有兼容的返回类型，比父类被重写方法更好访问，不能比父类被重写方法声明更多的异常（里氏代换原则）。重载对返回类型没有特殊的要求，不能根据返回类型进行区分。</p>
+<h2 id="1-Java的自动装箱拆箱过程"><a href="#1-Java的自动装箱拆箱过程" class="headerlink" title="1 Java的自动装箱拆箱过程"></a>1 Java的自动装箱拆箱过程</h2><p>1.1 Java中基本数据类型与包装类型</p>
+<p> Java基本数据类型有八种，主要分为四类：</p>
+<p>​        字符类型: char</p>
+<p>​        布尔类型: boolean</p>
+<p>​        整数类型: byte、short、int、long</p>
+<p>​        浮点类型: float、double</p>
+<p>在Java语言中new一个对象是存储在堆里的，我们通过栈中的引用来使用这些对象；所以，对象本身来说是比较消耗资源的。而基本数据类型的变量不需要用new创建，他们不会在堆上创建，而是直接在栈内存中存储，因此会更加高校。</p>
+<p>Java语言是一个面向对象的语言，但是Java中的基本数据类型却不是面向对象的，这在实际使用时存在许多不便，为了解决弥补这个不足，在设计每个基本数据类型时设计了一个对应的类进行代表，这样八个和基本数据类型对应的类统称为包装类（Wrapper Class）。包装类均位于java.lang包，包装类和基本数据类型的对应关系如下表所示。</p>
+<table>
+<thead>
+<tr>
+<th>基本数据类型</th>
+<th>包装类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>byte</td>
+<td>Byte</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td>short</td>
+<td>Short</td>
+</tr>
+<tr>
+<td>char</td>
+<td>Character</td>
+</tr>
+<tr>
+<td>int</td>
+<td>Integer</td>
+</tr>
+<tr>
+<td>long</td>
+<td>Long</td>
+</tr>
+<tr>
+<td>float</td>
+<td>Float</td>
+</tr>
+<tr>
+<td>double</td>
+<td>Double</td>
+</tr>
+</tbody></table>
+<p>Java语言在编程时很多地方都需要使用对象而不是基本数据类型。比如在集合类中我们无法将int、double等基本数据类放进去，因为集合容器要求元素是Object类型的。为了让基本数据类型也具有对象的特征，就出现了包装类型，它相当于将基本数据类型包装起来，使得它具有了对象的性质，并为其添加了属性和方法，丰富类基本类型的操作。</p>
+<p>1.2 Java中的自动装箱与自动拆箱的概念及其实现原理</p>
+<p>有时候需要在基本数据类型和包装类之间进行转换，将基本数据类型转换成包装类就是装箱，反之就是拆箱。在Java SE5中为了减少开发人员的工作，Java提供了自动拆箱与自动装箱功能，通过代码比较一下实现自动前后的区别。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Integer i = <span class="keyword">new</span> Integer(<span class="number">10</span>);<span class="comment">//装箱</span></span><br><span class="line">Integer i = <span class="number">10</span>;<span class="comment">//自动装箱</span></span><br><span class="line"><span class="keyword">int</span> b = i; <span class="comment">//自动拆箱</span></span><br></pre></td></tr></table></figure>
 
+<p>实际上，自动装箱都是通过valueOf()方法来实现的，自动拆箱都是通过包装类对象的xxxValue()来实现的。</p>
+<p>1.3 自动拆装箱的应用场景与存在的问题</p>
+<p>将基本数据类型放入集合类时、包装类型和基本数据类型的大小比较、包装类型的运算、三目运算符的使用、函数参数与返回值，这几种情况下都会发生自动拆装箱。</p>
+<p>Java SE的自动拆装箱还提供了一个和缓存有关的功能，我们先来看一下代码，猜测一下输出结果：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String... strings)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    Integer integer1 = <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">    Integer integer2 = <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (integer1 == integer2)</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"integer1 == integer2"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"integer1 != integer2"</span>);</span><br><span class="line"></span><br><span class="line">    Integer integer3 = <span class="number">300</span>;</span><br><span class="line"></span><br><span class="line">    Integer integer4 = <span class="number">300</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (integer3 == integer4)</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"integer3 == integer4"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"integer3 != integer4"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们普遍认为上面的两个判断的结果都是false。虽然比较的值是相等的，但是由于比较的是对象，而对象的引用不一样，所以会认为两个if判断都是false的。在Java中，==比较的是对象应用，而equals比较的是值。所以，在这个例子中，不同的对象有不同的引用，所以在进行比较的时候都将返回false。奇怪的是，这里两个类似的if条件判断返回不同的布尔值。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">integer1 == integer2</span><br><span class="line">integer3 != integer4</span><br></pre></td></tr></table></figure>
+
+<p><strong>原因就和Integer中的缓存机制有关。</strong>在Java 5中，在Integer的操作上引入了一个新功能来节省内存和提高性能。整型对象通过使用相同的对象引用实现了缓存和重用。我们只需要知道，当需要进行自动装箱时，如果数字在-128至127之间时，会直接使用缓存中的对象，而不是重新创建一个对象。</p>
+<p>自动拆装箱是一个很好的功能，大大节省了开发人员的精力，不再需要关心到底什么时候需要拆装箱。但是，他也会引入一些问题。包装对象的数值比较，不能简单的使用==，虽然-128到127之间的数字可以，但是这个范围之外还是需要使用equals比较。前面提到，有些场景会进行自动拆装箱，同时也说过，由于自动拆箱，如果包装类对象为null，那么自动拆箱时就有可能抛出空指针异常。</p>
+<h2 id="2-为什么有时候需要重写hashcode和equal方法，作用是什么？"><a href="#2-为什么有时候需要重写hashcode和equal方法，作用是什么？" class="headerlink" title="2 为什么有时候需要重写hashcode和equal方法，作用是什么？"></a>2 为什么有时候需要重写hashcode和equal方法，作用是什么？</h2><h2 id="3-System-out-println-new-mianshi-打印的是什么？"><a href="#3-System-out-println-new-mianshi-打印的是什么？" class="headerlink" title="3 System.out.println(new mianshi())打印的是什么？"></a>3 System.out.println(new mianshi())打印的是什么？</h2><h2 id="4-syn锁与lock锁的区别"><a href="#4-syn锁与lock锁的区别" class="headerlink" title="4 syn锁与lock锁的区别"></a>4 syn锁与lock锁的区别</h2><h3 id="4-1-Synchronized的内部原理与相关概念"><a href="#4-1-Synchronized的内部原理与相关概念" class="headerlink" title="4.1 Synchronized的内部原理与相关概念"></a>4.1 Synchronized的内部原理与相关概念</h3><h4 id="4-1-1-monitor是什么？怎么定义的？一个什么标志？在哪里标志的？"><a href="#4-1-1-monitor是什么？怎么定义的？一个什么标志？在哪里标志的？" class="headerlink" title="4.1.1 monitor是什么？怎么定义的？一个什么标志？在哪里标志的？"></a>4.1.1 monitor是什么？怎么定义的？一个什么标志？在哪里标志的？</h4><h4 id="4-1-2-syn可以加在什么上面，怎么使用？"><a href="#4-1-2-syn可以加在什么上面，怎么使用？" class="headerlink" title="4.1.2 syn可以加在什么上面，怎么使用？"></a>4.1.2 syn可以加在什么上面，怎么使用？</h4><h3 id="4-2-lock锁的是实现原理？是否可以重入，怎么重入？"><a href="#4-2-lock锁的是实现原理？是否可以重入，怎么重入？" class="headerlink" title="4.2 lock锁的是实现原理？是否可以重入，怎么重入？"></a>4.2 lock锁的是实现原理？是否可以重入，怎么重入？</h3><h3 id="4-3-syn锁与lock锁的区别"><a href="#4-3-syn锁与lock锁的区别" class="headerlink" title="4.3 syn锁与lock锁的区别"></a>4.3 syn锁与lock锁的区别</h3><h3 id="4-4-锁升级的概念以及一般过程"><a href="#4-4-锁升级的概念以及一般过程" class="headerlink" title="4.4 锁升级的概念以及一般过程"></a>4.4 锁升级的概念以及一般过程</h3><h2 id="5-volatile关键字的作用"><a href="#5-volatile关键字的作用" class="headerlink" title="5 volatile关键字的作用"></a>5 volatile关键字的作用</h2>
       
     </div>
     
@@ -443,15 +480,15 @@
   </li>
   <li class="post-copyright-link">
     <strong><span>文章作者:</span></strong>
-    <a href="/2019/08/15/JavaInterview-oo/">Java面试准备之面向对象</a>
+    <a href="/2019/08/21/JavaInterview-base/">Java面试准备之Java基础</a>
   </li>
   <li class="post-copyright-license">
     <strong><span>发布时间:</span> </strong>
-   2019年08月15日 - 00:00
+   2019年08月21日 - 00:00
   </li>
     <li class="post-copyright-license">
     <strong><span>最后更新:</span></strong>
-   2019年08月21日 - 19:51
+   2019年08月21日 - 20:55
   </li>
 </ul>
 
@@ -479,8 +516,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/15/leetcode-twosum/" rel="next" title="两数之和 Leetcode-twosum">
-                <i class="fa fa-chevron-left"></i> 两数之和 Leetcode-twosum
+              <a href="/2019/08/15/JavaInterview-oo/" rel="next" title="Java面试准备之面向对象">
+                <i class="fa fa-chevron-left"></i> Java面试准备之面向对象
               </a>
             
           </div>
@@ -488,10 +525,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/21/JavaInterview-base/" rel="prev" title="Java面试准备之Java基础">
-                Java面试准备之Java基础 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -702,7 +735,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-面向对象的优点？如何理解面向对象"><span class="nav-text">1 面向对象的优点？如何理解面向对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-接口与抽象类的区别"><span class="nav-text">2 接口与抽象类的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-什么是抽象类？"><span class="nav-text">2.1 什么是抽象类？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-什么是接口？"><span class="nav-text">2.2 什么是接口？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-接口与抽象类的语法区别"><span class="nav-text">2.3 接口与抽象类的语法区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-应用区别"><span class="nav-text">2.4 应用区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-类的组成和执行顺序"><span class="nav-text">3 类的组成和执行顺序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-String与StringBuffer、StringBuilder的区别？"><span class="nav-text">4 String与StringBuffer、StringBuilder的区别？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-三者的语法区别"><span class="nav-text">4.1 三者的语法区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-关于String的不可变"><span class="nav-text">4.2 关于String的不可变</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-1底层源码设计"><span class="nav-text">4.2.1底层源码设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-1为什么奖String设计成不可变"><span class="nav-text">4.2.1为什么奖String设计成不可变</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-重载和重写的区别？"><span class="nav-text">5 重载和重写的区别？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-什么是重载？"><span class="nav-text">5.1 什么是重载？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-什么是重写？"><span class="nav-text">5.2 什么是重写？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-重载和重写的区别"><span class="nav-text">5.3 重载和重写的区别</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Java的自动装箱拆箱过程"><span class="nav-text">1 Java的自动装箱拆箱过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-为什么有时候需要重写hashcode和equal方法，作用是什么？"><span class="nav-text">2 为什么有时候需要重写hashcode和equal方法，作用是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-System-out-println-new-mianshi-打印的是什么？"><span class="nav-text">3 System.out.println(new mianshi())打印的是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-syn锁与lock锁的区别"><span class="nav-text">4 syn锁与lock锁的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-Synchronized的内部原理与相关概念"><span class="nav-text">4.1 Synchronized的内部原理与相关概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-1-monitor是什么？怎么定义的？一个什么标志？在哪里标志的？"><span class="nav-text">4.1.1 monitor是什么？怎么定义的？一个什么标志？在哪里标志的？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-1-2-syn可以加在什么上面，怎么使用？"><span class="nav-text">4.1.2 syn可以加在什么上面，怎么使用？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-lock锁的是实现原理？是否可以重入，怎么重入？"><span class="nav-text">4.2 lock锁的是实现原理？是否可以重入，怎么重入？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-syn锁与lock锁的区别"><span class="nav-text">4.3 syn锁与lock锁的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-锁升级的概念以及一般过程"><span class="nav-text">4.4 锁升级的概念以及一般过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-volatile关键字的作用"><span class="nav-text">5 volatile关键字的作用</span></a></li></ol></div>
             
 
           </div>
